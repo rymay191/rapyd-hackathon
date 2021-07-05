@@ -7,11 +7,6 @@
 
 if($order_details['order_payable']){
 
-  //
-  // We create an rapyd order using orders api
-  // Docs: https://docs.razorpay.com/docs/orders
-  //
-
   $checkout_amount = $order_details['order']['total'] * 100; //razorpay wants this in cents
   $internal_order_id = $order_details['order']['id'];
   $payable_id = $order_details['order']['payable_id'];
@@ -31,24 +26,6 @@ if($order_details['order_payable']){
     $rapyd_order_id = $order_details['order']['payment_provider_order_id'];
 
     $rapydOrder  = get_latest_from_rapyd($order_details['order']['payable_id']);
-
-    // if($razorpayOrder['status'] == 'paid'){
-      
-    //   //We should also have a payments array if its paid
-    //   //Lets look at the last payment
-    //   $last_payment = $razorpayOrder['payments']['items'][0];
-
-    //   if($last_payment['status'] == 'captured'){  
-    //     //Looks like its paid and we did not know about it.
-    //     mark_order_as_paid($order_details, $last_payment);
-    //     header('Location: '.$this_page_url);
-    //     die;
-    //   }else{
-    //     //TODO we might need to handle some pending payment status
-    //   }
-
-    //   //Redirect to receipt
-    // }
   
   }else{ //we will need to make one.
 
@@ -68,8 +45,8 @@ if($order_details['order_payable']){
       $title = "Whoops  :(";
       $description = 'We had trouble connecting with the payment provider (Rapyd) to setup this transaction.';
 
-      if(isset($razorpayOrder['message'])){  //we have more error information.
-        $description .= '<br/><br/>Rapyd error message: <strong>'.$razorpayOrder['message'].'</strong>';
+      if(isset($rapydOrder['message'])){  //we have more error information.
+        $description .= '<br/><br/>Rapyd error message: <strong>'.$rapydOrder['message'].'</strong>';
       }
 
       $description .= '<br/><br/><strong>Refresh the page to give it another try.</strong>';
