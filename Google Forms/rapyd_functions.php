@@ -46,9 +46,9 @@ function generate_string($length=12) {
 
 // make_request method - Includes the logic to communicate with the Rapyd sandbox server.
 function make_request($method, $path, $body = null) {
-    $base_url = 'https://sandboxapi.rapyd.net';
-    $access_key = 'E7A90DD4B0CE79700754';     // The access key received from Rapyd.
-    $secret_key = 'deeee83a256633e6667645c498546003999fd34b493b43c2e5e30bd8203e709cba21c0ae5b9c1a3d';     // Never transmit the secret key by itself.
+    $base_url = 'https://sandboxapi.rapyd.net'; //Specify environment
+    $access_key = '';     // The access key received from Rapyd.
+    $secret_key = '';     // Never transmit the secret key by itself.
 
     $idempotency = generate_string();      // Unique for each request.
     $http_method = $method;                // Lower case.
