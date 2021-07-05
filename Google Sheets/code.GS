@@ -16,8 +16,8 @@ var RAPYD_CONFG = {
   'default_country': 'SG', 
   'default_currency': 'SGD',
   'api_domain' : 'sandboxapi.rapyd.net', //production is: api.rapyd.net
-  'api_secret_key': 'deeee83a256633e6667645c498546003999fd34b493b43c2e5e30bd8203e709cba21c0ae5b9c1a3d',
-  'api_access_key': 'E7A90DD4B0CE79700754'
+  'api_secret_key': '', //Put your API Secret Key Here
+  'api_access_key': '' //Put your API Access Key Here
 }
 
 /**
