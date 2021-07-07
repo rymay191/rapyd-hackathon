@@ -4,8 +4,8 @@
 Thanks for taking time to take a look at our entry.
 
 ### Google Forms Demos:
- - Integrated Checkout
- - Subscription Payments
+ - [Integrated Checkout](https://docs.google.com/forms/d/e/1FAIpQLSc9-hroCOOX1SIxjdJdkUL-YN5OiKTnsLKc07L0ijUJhsu0hg/viewform)
+ - [Subscription Payments](https://docs.google.com/forms/d/e/1FAIpQLSfkLbxiWcTi6YR0KuchshEXEn8jh1vFGIAv6dxh-2WgrAYODA/viewform)
 
 ### Using Custom Rapyd Functions in Google Sheets:
 You can try it out by:
